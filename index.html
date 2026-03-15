@@ -11,7 +11,7 @@
       --blue2:   #0077ff;
       --green:   #00ff9d;
       --yellow:  #ffe033;
-      --bg:      #04060f;
+      --bg:      #000000;
       --bg2:     #080c1a;
       --bg3:     #0d1228;
       --border:  rgba(0,212,255,0.18);
@@ -31,7 +31,7 @@
     #cursor-ring{position:fixed;width:32px;height:32px;border:1px solid var(--blue);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.6}
 
     /* ── SCANLINES ── */
-    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,212,255,.012) 3px,rgba(0,212,255,.012) 4px);pointer-events:none;z-index:9000}
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(247, 245, 245, 0.012) 3px,rgba(241, 248, 250, 0.012) 4px);pointer-events:none;z-index:9000}
 
     /* ── TOPBAR ── */
     #topbar{position:sticky;top:0;z-index:1000;height:60px;background:rgba(4,6,15,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;gap:1rem}
@@ -57,10 +57,6 @@
     /* ── HERO ── */
     .hero{position:relative;min-height:520px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:5rem 3rem 4rem;overflow:hidden}
     .hero-bg{position:absolute;inset:0}
-    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 90% 90% at 90% 40%,black 20%,transparent 80%)}
-    .hero-orb{position:absolute;right:8%;top:50%;transform:translateY(-50%);width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,119,255,.18) 0%,rgba(0,212,255,.06) 50%,transparent 70%);border:1px solid rgba(0,212,255,.15);animation:orb 4s ease-in-out infinite}
-    .hero-orb::before{content:'';position:absolute;inset:22px;border-radius:50%;border:1px solid rgba(0,212,255,.1);animation:orb 4s ease-in-out infinite .5s}
-    @keyframes orb{0%,100%{opacity:.6;transform:translateY(-50%) scale(1)}50%{opacity:1;transform:translateY(-50%) scale(1.04)}}
     .hero-content{position:relative;z-index:1;max-width:660px}
     .hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:1.4rem}
     .hero-tag::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;animation:blink 1.2s step-end infinite}
