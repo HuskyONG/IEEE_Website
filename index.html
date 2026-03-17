@@ -194,6 +194,34 @@
     .social-name{font-family:var(--display);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:.25rem}
     .social-handle{font-family:var(--mono);font-size:.65rem;color:var(--muted)}
 
+    /* ══════════════════════════════
+       DONATE PAGE
+    ══════════════════════════════ */
+    .donate-hero{background:radial-gradient(ellipse 60% 70% at 60% 40%,rgba(0,212,255,.08) 0%,transparent 70%),var(--bg)}
+    .donate-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:3rem}
+    .donate-tab{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 2rem;color:var(--muted);border-bottom:2px solid transparent;cursor:none;transition:color .2s,border-color .2s;background:none;border-top:none;border-left:none;border-right:none}
+    .donate-tab:hover{color:var(--txt)}
+    .donate-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+    .donate-panel{display:none}
+    .donate-panel.active{display:block;animation:fadeUp .3s ease both}
+
+    .donate-steps{counter-reset:step;display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem}
+    .donate-step{display:flex;gap:1.2rem;align-items:flex-start}
+    .donate-step-num{counter-increment:step;width:36px;height:36px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:.75rem;font-weight:900;color:var(--blue);flex-shrink:0;text-shadow:0 0 10px rgba(0,212,255,.4)}
+    .donate-step-num::before{content:counter(step,decimal-leading-zero)}
+    .donate-step-body{padding-top:.4rem;font-size:.92rem;color:var(--muted);line-height:1.8}
+    .donate-step-body strong{color:var(--txt)}
+    .donate-step-body a{color:var(--blue);text-decoration:none;word-break:break-all}
+    .donate-step-body a:hover{text-decoration:underline}
+
+    .donate-note{margin-top:2.5rem;background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--blue);padding:1.2rem 1.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);line-height:1.8}
+    .donate-note a{color:var(--blue);text-decoration:none}
+    .donate-note a:hover{text-decoration:underline}
+
+    .donate-sponsor-note{margin-top:2rem;background:var(--bg2);border:1px solid var(--border);padding:1.5rem;font-size:.88rem;color:var(--muted);line-height:1.8}
+    .donate-sponsor-note a{color:var(--blue);text-decoration:none}
+    .donate-sponsor-note a:hover{text-decoration:underline}
+
     /* ── FOOTER ── */
     footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
     .footer-inner{max-width:1200px;margin:0 auto}
@@ -242,6 +270,7 @@
     <a onclick="showPage('scrapbot')"                   id="nav-scrapbot"    data-num="03">ScrapBot</a>
     <a onclick="showPage('members')"                    id="nav-members"     data-num="04">Members</a>
     <a onclick="showPage('joinus')"                     id="nav-joinus"      data-num="05">Join Us</a>
+    <a onclick="showPage('donate')"                     id="nav-donate"      data-num="06">Donate</a>
   </nav>
 </header>
 
@@ -266,6 +295,7 @@
         <button class="btn btn-glow" onclick="showPage('robosub')">RoboSub</button>
         <button class="btn btn-ghost" onclick="showPage('scrapbot')">ScrapBot</button>
         <button class="btn btn-green" onclick="showPage('joinus')">Join Us</button>
+        <button class="btn btn-glow" onclick="showPage('donate')">Donate</button>
       </div>
     </div>
   </section>
@@ -288,7 +318,7 @@
   <div class="stat-strip">
     <div class="stat-cell"><div class="stat-num">50+</div><div class="stat-label">Members</div></div>
     <div class="stat-cell"><div class="stat-num">1</div><div class="stat-label">Competitions</div></div>
-    <div class="stat-cell"><div class="stat-num">00+</div><div class="stat-label">Years Active</div></div>
+    <div class="stat-cell"><div class="stat-num">20+</div><div class="stat-label">Years Active</div></div>
     <div class="stat-cell"><div class="stat-num">5+</div><div class="stat-label">Workshops Held</div></div>
   </div>
 
@@ -404,7 +434,7 @@
           <div class="spec-cell"><div class="spec-lbl">Dimensions</div><div class="spec-val">— × — × —</div></div>
           <div class="spec-cell"><div class="spec-lbl">Weight</div><div class="spec-val">— kg</div></div>
           <div class="spec-cell"><div class="spec-lbl">Depth Rating</div><div class="spec-val">— m</div></div>
-          <div class="spec-cell"><div class="spec-lbl">Runtime</div><div class="spec-val">— min</div></div>
+          <div class="spec-cell"><div class="spec-val">— min</div></div>
         </div>
       </div>
     </div> -->
@@ -506,6 +536,115 @@
 ══════════════════════════════════════════════ -->
 
 
+<!-- ══════════════════════════════════════════════
+     DONATE
+══════════════════════════════════════════════ -->
+<div class="page" id="page-donate">
+
+  <section class="hero donate-hero">
+    <div class="hero-bg" style="background:radial-gradient(ellipse 60% 70% at 60% 40%,rgba(0,212,255,.08) 0%,transparent 70%),var(--bg)"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Support IEEE @ UIC</div>
+      <h1><span class="hl">How to</span><span class="glow"> Donate</span></h1>
+      <p class="hero-sub">Thank you for considering a donation to IEEE @ UIC! Below are instructions for donations online or by check.</p>
+    </div>
+  </section>
+
+  <div class="section">
+
+    <!-- TAB SWITCHER -->
+    <div class="donate-tabs">
+      <button class="donate-tab active" onclick="donateSwitchTab('online', this)">Online</button>
+      <button class="donate-tab" onclick="donateSwitchTab('check', this)">Via Check</button>
+    </div>
+
+    <!-- ONLINE PANEL -->
+    <div class="donate-panel active" id="donate-panel-online">
+      <div class="s-tag">Online Donations</div>
+      <div class="s-title">Donate <span class="hl">Online</span></div>
+
+      <div class="donate-steps">
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Visit: <a href="https://payment.give.uic.edu/campaigns/48413/donations/new" target="_blank">https://payment.give.uic.edu/campaigns/48413/donations/new</a>
+          </div>
+        </div>
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Fill out the giving form. In the <strong>Designation</strong> dialog box, select the option <strong>"other"</strong> and then type <strong>UIC IEEE Fund</strong>.
+          </div>
+        </div>
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Select the payment method and complete the transaction.
+          </div>
+        </div>
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Receive recognition on our website and in team materials.
+          </div>
+        </div>
+      </div>
+
+      <div class="donate-note">
+        For additional giving instructions or help, you can visit
+        <a href="https://advance.uic.edu/ways-to-give-info/" target="_blank">https://advance.uic.edu/ways-to-give-info/</a>
+      </div>
+    </div>
+
+    <!-- CHECK PANEL -->
+    <div class="donate-panel" id="donate-panel-check">
+      <div class="s-tag">Donations Via Check</div>
+      <div class="s-title">Donate by <span class="hl">Check</span></div>
+
+      <div class="donate-steps">
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Make a check payable to <strong>University of Illinois Foundation</strong>.
+          </div>
+        </div>
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            In the <strong>Memo</strong> section, make sure to include: <strong>"UIC Engineering Design Fund"</strong>.
+          </div>
+        </div>
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Mail your donation check to:<br>
+            <strong>University of Illinois Foundation</strong><br>
+            P.O. Box 734500, Chicago, IL, 60673-4500
+          </div>
+        </div>
+        <div class="donate-step">
+          <div class="donate-step-num"></div>
+          <div class="donate-step-body">
+            Receive recognition on our website and in team materials.
+          </div>
+        </div>
+      </div>
+
+      <div class="donate-note">
+        For additional giving instructions or help, you can visit
+        <a href="https://advance.uic.edu/ways-to-give-info/" target="_blank">https://advance.uic.edu/ways-to-give-info/</a>
+      </div>
+    </div>
+
+    <!-- SPONSOR NOTE -->
+    <div class="donate-sponsor-note" style="margin-top:3rem;">
+      If you or your company would like to be featured in our sponsored section on this website for your donation(s), contact us at:
+      <a href="mailto:ieee.uic.communications@gmail.com">ieee.uic.communications@gmail.com</a>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- ══════════════════════════════════════════════
      FOOTER
@@ -536,30 +675,30 @@
           <span class="fc-icon">✉️</span>
           <div>
             <div class="fc-label">General Email</div>
-            <div class="fc-val"><a href="mailto:ieee@university.edu">ieee.uic.communications@gmail.com</a></div>
+            <div class="fc-val"><a href="mailto:ieee.uic.communications@gmail.com">ieee.uic.communications@gmail.com</a></div>
           </div>
         </div>
         <div class="footer-contact-item">
           <span class="fc-icon">👤</span>
           <div>
             <div class="fc-label">President</div>
-            <div class="fc-val"><a href="mailto:president@university.edu">nkamd2@uic.edu</a></div>
+            <div class="fc-val"><a href="mailto:nkamd2@uic.edu">nkamd2@uic.edu</a></div>
           </div>
         </div>
-        <!-- <div class="footer-contact-item">
+        <div class="footer-contact-item">
           <span class="fc-icon">👤</span>
           <div>
             <div class="fc-label">Faculty Advisor</div>
-            <div class="fc-val"><a href="mailto:advisor@university.edu">advisor@university.edu</a></div>
+            <div class="fc-val"><a href="mailto:ckmcginn@uic.edu">ckmcginn@uic.edu</a></div>
           </div>
-        </div> -->
+        </div>
       </div>
 
       <!-- SOCIAL LINKS -->
       <div>
         <div class="footer-col-title">Follow Us</div>
         <div class="footer-social-links">
-          <a class="fsl-item" href="https://discord.gg/YOUR_INVITE" target="_blank">
+          <a class="fsl-item" href="https://discord.gg/Dc6RkAPq9S" target="_blank">
             <div class="fsl-ico">💬</div>Discord Server
           </a>
           <a class="fsl-item" href="https://www.instagram.com/ieeeatuic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
@@ -584,6 +723,7 @@
         <a onclick="showPage('scrapbot')">ScrapBot</a>
         <a onclick="showPage('members')">Members</a>
         <a onclick="showPage('joinus')">Join Us</a>
+        <a onclick="showPage('donate')">Donate</a>
       </div>
     </div>
   </div>
@@ -616,6 +756,14 @@
     document.getElementById('page-'+id).classList.add('active');
     document.getElementById('nav-'+id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── DONATE TAB SWITCHER ──
+  function donateSwitchTab(panel, btn) {
+    document.querySelectorAll('.donate-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.donate-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('donate-panel-' + panel).classList.add('active');
+    btn.classList.add('active');
   }
 </script>
 </body>
